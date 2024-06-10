@@ -39,3 +39,10 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
+      ignoreDifferences:
+        - kind: Notebook
+          group: kubeflow.org
+          jqPathExpressions:
+            - .spec.template.spec.containers[] | select(.name == "oauth-proxy")
+            - .spec.template.spec.volumes[] | select(.name == "oauth-config")
+            - .spec.template.spec.volumes[] | select(.name == "tls-certificates")
