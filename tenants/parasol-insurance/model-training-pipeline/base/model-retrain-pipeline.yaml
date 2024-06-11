@@ -15,7 +15,7 @@ spec:
     - default: 'train-car-rekon.py'
       name: PIPELINE_SCRIPT
       type: string
-    - default: main
+    - default: fast-build
       name: GIT_REVISION
       type: string
     - default: 3.11-ubi9
